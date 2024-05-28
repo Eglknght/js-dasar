@@ -1,0 +1,23 @@
+<script>
+    // membuat function
+    function salam () {
+        console.log('Halo')
+    }
+    // memanggil/menggunakan function
+    // salam()
+
+    // params diisi dengan variabel
+    // cara pertama untuk mengatasi undefined jika salah satu data opsional
+    function halo(nama , alamat = '' , pekerjaan) {
+    // cara kedua untuk mengatasi undefined jika salah satu data opsional
+        if (alamat) {
+            console.log('halo saya '+ nama + ', profesi saya ' + pekerjaan +', saya tinggal di '+ alamat)
+        } else {
+            console.log('halo saya '+ nama + ', profesi saya ' + pekerjaan)
+        }
+}
+    // untuk data optional bisa pakai null atau string kosong tanpa spasi('')
+    halo('Elang' , '' , 'Mahasiswa')
+    halo('Satria' , 'Jakarta' , 'Mahasiswa')
+
+</script>

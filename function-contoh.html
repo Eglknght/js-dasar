@@ -1,0 +1,36 @@
+<script>
+
+    function cetak_slip_gaji(nama, periode, gajian, upahLembur, bpjs, totalBersih) {  
+    //  syntax concat modern
+    document.write(
+        `Slip Gaji periode ${periode};  
+        <hr>
+        Nama : ${nama} <br>
+        Gaji : Rp ${gajian.toLocaleString('id-ID')} <br>
+        Lembur : Rp ${upahLembur.toLocaleString('id-ID')} <br>
+        Potongan BPJS : Rp ${bpjs.toLocaleString('id-ID')} <br>
+        Total : Rp ${totalBersih.toLocaleString('id-ID')} <br><br><br>`
+        )
+    }
+    function proses_hitung(nama , periode,  masuk , gajiHarian , lembur = 0) {
+        var gajian      = gajiHarian * masuk
+        var upahLembur  = (gajiHarian/8) * lembur
+        var totalKotor  = gajian + upahLembur
+        var bpjs        = (totalKotor / 100) * 2 
+        var totalBersih = totalKotor - bpjs
+        cetak_slip_gaji(nama, periode, gajian, upahLembur, totalKotor, bpjs, totalBersih)
+    //syntax concat tradisional
+//     document.write(
+//         'Slip Gaji periode' + periode + 
+//         '<hr>' + 
+//         'Nama : ' + nama + '<br>' +
+//         'Gaji : Rp' + gajian.toLocaleString('id-ID') + '<br>' +
+//         'Lembur : Rp ' + upahLembur.toLocaleString('id-ID') +  '<br>' +
+//         'Potongan BPJS : Rp ' + bpjs.toLocaleString('id-ID') + '<br>' +
+//         'Total : Rp' + totalBersih.toLocaleString('id-ID') + '<br>'
+//     )
+}
+proses_hitung('Elang', 'Mei 2024' , 15, 150000, 5)
+proses_hitung('Satria', 'Mei 2024', 29, 180000, 18)
+
+</script>
