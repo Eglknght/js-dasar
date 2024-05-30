@@ -1,0 +1,25 @@
+<script>
+
+    var elang = {
+        nama: 'Elang',
+        berat: 60,
+        tinggi: 175,
+        hobi: ['Main', 'Makan', 'Tidur'],
+        sebutHobby: function() {
+            var semuaHobby = ''
+            // var semuaHobby = 'main'
+            // var semuaHobby = 'main' + 'makan'
+            // var semuaHobby = 'main' + 'makan' + 'tidur'
+            for (let i = 1; i <= this.hobi.length; i++) {
+                //+= menambahkan data semuaHobby dengan data semuaHobby itu sendiri
+                semuaHobby += i + '. '+ this.hobi[i] + '\n'
+            }
+            console.log(
+                `Hobi ${this.nama} : \n`+
+                semuaHobby
+            )
+        }
+    }
+    elang.sebutHobby()
+
+</script>

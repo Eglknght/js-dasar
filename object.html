@@ -1,0 +1,27 @@
+<script>
+
+    var mahasiswa = {
+        nama: 'Elang',
+        ipk: 3.50,
+        statusLulus: function() {
+            if (this.ipk >= 3) {
+                return('Lulus') //fungsi return untuk menghasilkan data yang akan digunakan untuk logic lain
+            } else {
+                return('Tidak Lulus')
+            }
+        },
+        cetakRapor: function() {
+            console.log(
+                `
+                Rapor : ${this.nama}
+                IPK : ${this.ipk}
+                Status Kelulusan : ${this.statusLulus()}
+                `
+            )
+        }
+    }
+    // mahasiswa.statusLulus()
+// console.log(mahasiswa['ipk'])
+// console.log(mahasiswa.nama)
+mahasiswa.cetakRapor()
+</script>
